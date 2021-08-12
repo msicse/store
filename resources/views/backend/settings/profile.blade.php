@@ -5,10 +5,18 @@
 @section('content')
 <div class="container-fluid">
     <div class="block-header">
-        {{-- <a href="{{ route('admin.purchases.index') }}" class="btn btn-primary waves-effect pull-right" style="margin-bottom:10px;" >
+        @if(Auth::user()->role_id == 1)
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-primary waves-effect pull-right" style="margin-bottom:10px;" >
             <i class="material-icons">keyboard_return</i>
             <span>Return</span> 
-        </a> --}}
+        </a>
+        @else
+        <a href="{{ route('author.dashboard') }}" class="btn btn-primary waves-effect pull-right" style="margin-bottom:10px;" >
+            <i class="material-icons">keyboard_return</i>
+            <span>Return</span> 
+        </a>
+        @endif
+
 
     </div>
  
